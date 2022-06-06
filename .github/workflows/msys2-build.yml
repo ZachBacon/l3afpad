@@ -23,16 +23,16 @@ jobs:
           install: >-
             mingw-w64-clang-x86_64-toolchain
             mingw-w64-clang-x86_64-pkgconf
-            mingw-w64-clang-x86_64-gtk3
+            mingw-w64-clang-x86_64-gtk4
             autotools
             intltool
             zip
-      - name: Configure
-        run: >-
-          ./autogen.sh
-          ./configure
-      - name: Build
+      - name: autogen the sources
+        run: ./autogen.sh
+      - name: configure the sources
+        run: ./configure
+      - name: Build the sources
         run: make
 
       - name: Install
-        run: ninja -C build install
+        run: make install

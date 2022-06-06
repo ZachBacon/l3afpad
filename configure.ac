@@ -10,7 +10,7 @@ if test "$GCC" = "yes"; then
 fi
 AM_PROG_CC_C_O
 
-PKG_CHECK_MODULES(GTK, gtk+-3.0)
+PKG_CHECK_MODULES(GTK, gtk4)
 
 AC_ARG_ENABLE(print,
 	AC_HELP_STRING([--disable-print], [force to disable print feature]))
